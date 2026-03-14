@@ -2,7 +2,7 @@
 
 A resilient, multi-region incident management backend that ensures causal ordering and conflict detection using Vector Clocks. Designed for high availability and eventual consistency in geographically distributed environments.
 
-## 🚀 Overview
+##  Overview
 
 In distributed systems, physical clocks are unreliable for ordering events due to clock skew and network latency. This project implements **Vector Clocks** to track the "happened-before" relationship between updates across three independent regions: **US**, **EU**, and **APAC**.
 
@@ -13,7 +13,7 @@ In distributed systems, physical clocks are unreliable for ordering events due t
 - **Asynchronous Replication**: Periodic background synchronization between regions.
 - **Fault Tolerance**: Each region operates independently with its own database.
 
-## 🏗️ Architecture
+##  Architecture
 
 The system consists of three identical Node.js services, each paired with a dedicated PostgreSQL database.
 
@@ -22,14 +22,14 @@ The system consists of three identical Node.js services, each paired with a dedi
 - **Vector Clock Module**: Pure functional implementation of vector clock logic (increment, compare, merge).
 - **Replication Worker**: A background process in each service that polls for local changes and pushes them to peer regions.
 
-## 🛠️ Tech Stack
+##  Tech Stack
 - **Node.js**: Primary application runtime.
 - **Express**: Web framework for RESTful APIs.
 - **PostgreSQL**: Relational database for persistence and JSONB support.
 - **Docker & Docker Compose**: Orchestration and containerization.
 - **Axios**: HTTP client for inter-region replication.
 
-## 🚦 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - Docker and Docker Compose
@@ -51,7 +51,7 @@ All services will be available at:
 - **EU Region**: `http://localhost:3002`
 - **APAC Region**: `http://localhost:3003`
 
-## 🧪 Verification & Simulation
+##  Verification & Simulation
 
 To demonstrate the system's ability to detect conflicts during a network partition, run the provided simulation script:
 
@@ -68,7 +68,7 @@ docker exec vectorclocks-region-us-1 bash /app/simulate_partition.sh
 6. Displays the incident with `version_conflict: true`.
 7. Resolves the conflict and shows the final consistent state.
 
-## 📝 API Reference
+##  API Reference
 
 ### Public Endpoints
 - `POST /incidents`: Create a new incident.
