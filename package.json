@@ -1,0 +1,17 @@
+{
+  "name": "vector-clock-incidents",
+  "version": "1.0.0",
+  "description": "Multi-region incident management with vector clocks",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "pg": "^8.11.3",
+    "uuid": "^9.0.1"
+  }
+}
