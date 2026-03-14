@@ -80,7 +80,7 @@ docker exec vectorclocks-region-us-1 bash /app/simulate_partition.sh
 - `POST /internal/replicate`: Receive replicated data from peers.
 - `GET /health`: Healthcheck for orchestration.
 
-## 📜 Design Decisions
+##  Design Decisions
 - **Vector Clock Representation**: Stored as `JSONB` in PostgreSQL for efficient querying and updates.
 - **Conflict Strategy**: The system flags conflicts for manual intervention rather than using arbitrary "last-write-wins" to prevent data loss.
 - **Idempotency**: Replication logic uses vector clock comparisons to ensure processing the same update multiple times is safe.
